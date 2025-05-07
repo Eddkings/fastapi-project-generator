@@ -47,3 +47,26 @@ Durante la generación, podrás elegir:
 - **Pytest:** Incluir o no configuración para pruebas automáticas.
 
 Al finalizar, encontrarás tu nuevo proyecto en una carpeta con el nombre que hayas elegido.
+
+Ejemplo
+
+```
+✅ Proyecto nombre_del_proyecto creado exitosamente en /ruta/completa/nombre_del_proyecto.
+```
+
+Y la estructura generada será similar a:
+
+```
+nombre_del_proyecto/
+├── app/
+│   ├── main.py
+│   ├── db/
+│   │   └── session.py
+│   └── ...
+├── venv/                # Si elegiste crear entorno virtual
+├── requirements.txt
+├── .env                 # Si elegiste incluir variables de entorno
+├── alembic/             # Si elegiste migraciones
+├── Dockerfile           # Si elegiste Docker
+└── tests/               # Si elegiste Pytest
+```

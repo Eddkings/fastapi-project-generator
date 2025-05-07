@@ -5,7 +5,7 @@ from templates import (
     alembic,
 )
 from templates.db import db
-from templates.environment import env
+from templates.environment import env, venv
 from templates.orm import orm
 from templates.requirements import generar_requirements, opciones
 import templates.commands.runner as runner
@@ -21,6 +21,9 @@ def new(name: str):
     """Crea un nuevo proyecto FastAPI con opciones personalizadas."""
 
     project_path = base.create_structure(name)
+    
+    if venv.ask_to_include():
+        venv.setup(project_path)
 
     if db.ask_to_include():
         db_choice = db.ask_db_choice()
